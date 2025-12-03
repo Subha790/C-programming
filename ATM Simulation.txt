@@ -1,0 +1,49 @@
+#include <stdio.h>
+int main()
+{
+    int choice;
+    float balance=0,amount;
+    while (1)
+    {
+        printf("\nATM MENU=\n");
+        printf("1.Deposit\n");
+        printf("2.Withdraw\n");
+        printf("3.Balance Check\n");
+        printf("4.Exit\n");
+        printf("Enter your choice:");
+        scanf("%d",&choice);
+        switch(choice) 
+        {
+            case 1:
+                printf("Enter amount to deposit:");
+                scanf("%f",&amount);
+                balance=balance+amount;
+                printf("Amount deposited\n");
+                break;
+            case 2:
+                printf("Enter amount to withdraw:");
+                scanf("%f",&amount);
+                if (amount>balance)
+                {
+                    printf("Insufficient balance!Withdrawal denied\n");
+                }
+                else
+                {
+                    balance=balance-amount;
+                    printf("Amount withdrawn.\n");
+                }
+                break;
+            case 3:
+                printf("Current Balance:%.2f\n", balance);
+                break;
+            case 4:
+                printf("Thank you! Exiting...\n");
+                return 0;
+
+            default:
+                printf("Invalid choice!Try again\n");
+        }
+    }
+
+    return 0;
+}
