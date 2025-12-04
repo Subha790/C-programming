@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main()
+{
+    int i,choice;
+    while(1)
+    {
+        for(i=10;i>=1;i--)
+        {
+            printf("RED:%d seconds\n",i);
+        }
+        for (i=3;i>=1;i--)
+        {
+            printf("YELLOW:%d seconds\n",i);
+        }
+        for (i=7;i>=1;i--)
+        {
+            printf("GREEN:%d seconds\n",i);
+        }
+        printf("Press 1 to continue next cycle");
+        printf("Press 0 to stop");
+        scanf("%d",&choice);
+
+        if (choice==0)
+        {
+            printf("Program stops\n");
+            break;
+        }
+    }
+
+}
