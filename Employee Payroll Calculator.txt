@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main()
+{
+    int hours[7];
+    int i;
+    float regularRate=100;
+    float overtimeRate=200;
+    float totalSalary=0;
+    printf("Enter working hours for 7 days:\n");
+    for (i=0;i<7;i++)
+    {
+        scanf("%d",&hours[i]);
+        if (hours[i]<0)
+        {
+            printf("Error:Invalid input(negative hours).\n");
+            return 0;
+        }
+    }
+    for (i=0;i<7;i++)
+    {
+        if (hours[i]<=8)
+        {
+            totalSalary+=hours[i]*regularRate;
+        } 
+        else
+        {
+            totalSalary+=(8*regularRate)+((hours[i]-8)*overtimeRate);
+        }
+    }
+    printf("\nPayroll Summary\n");
+    printf("Total Weekly Salary:%.2f\n",totalSalary);
+
+    return 0;
+}
