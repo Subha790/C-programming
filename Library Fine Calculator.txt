@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main()
+{
+    int days;
+    printf("Enter days overdue:");
+    scanf("%d",&days);
+    if(days<0)
+    {
+        printf("Error: Invalid input\n");
+        return 0;
+    }
+    if(days==0)
+    {
+        printf("No fine\n");
+        return 0;
+    }
+
+    if(days>30)
+    {
+        printf("Membership Cancelled\n");
+        return 0;
+    }
+
+    int fine=0;
+
+    if(days<=5)
+    {
+        fine=days*2;
+    }
+    else if(days<=10)
+    {
+        fine=days*5;          
+    }
+    else 
+    {
+        fine=days*10;  
+    }
+    printf("Fine=%d\n",fine);
+    return 0;
+}
