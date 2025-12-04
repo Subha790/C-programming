@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main()
+{
+    char m[50];
+    int i;
+    printf("Enter mobile number:");
+    scanf("%s",m);
+
+    int len=strlen(m);
+
+    if(len==0)
+    {
+        printf("Invalid:Empty input.\n");
+        return 0;
+    }
+    if(len!=10)
+    {
+        printf("Invalid:Must be exactly 10 digits.\n");
+        return 0;
+    }
+    if(m[0]=='0')
+    {
+        printf("Invalid:Cannot start with 0.\n");
+        return 0;
+    }
+    for(i=0;i<len;i++)
+    {
+        if (!isdigit(m[i]))
+        {
+            printf("Invalid:Only digits allowed.\n");
+            return 0;
+        }
+    }
+    printf("Valid mobile number.\n");
+    return 0;
+}
